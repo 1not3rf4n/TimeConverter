@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+
+# Flask
+instance/
+.flaskenv
+
+# Node.js / Tailwind
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional: If these are not part of the project
+git_setup.bat"node_modules/" 

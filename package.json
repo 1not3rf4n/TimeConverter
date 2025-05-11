@@ -1,0 +1,21 @@
+{
+  "name": "mabani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./static/src/input.css -o ./static/css/output.css",
+    "watch": "tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch",
+    "start": "concurrently \"npm run watch\" \"flask run\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  }
+}

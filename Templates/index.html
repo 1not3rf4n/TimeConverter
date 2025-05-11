@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter</title>
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Converter</h1>
+        
+        <form method="POST" class="space-y-4">
+            <div>
+                <label for="seconds" class="block text-sm font-medium text-gray-700">Enter seconds:</label>
+                <input type="number" name="seconds" id="seconds" required
+                       class="mt-1 block text-blue-600 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit"
+                    class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition">
+                Calculate
+            </button>
+        </form>
+
+        {% if result %}
+            <div class="mt-6 p-4 bg-gray-200 rounded-md">
+                {% if result.error %}
+                    <p class="text-red-500 text-center">{{ result.error }}</p>
+                {% else %}
+                    <p class="text-red-500 text-center">
+                        {{ result.hours }} hours<br>
+                    </p>
+                    <p class="text-green-500 text-center">
+                        {{ result.minutes }} minutes<br>
+                    </p>
+                    <p class="text-blue-500 text-center">
+                        {{ result.seconds }} seconds<br>
+                    </p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
